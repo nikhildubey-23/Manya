@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="bg-primary text-white py-5 text-center">
-    <div class="container">
-        <h1 class="fw-bold">Photo Gallery</h1>
-        <p class="lead">A glimpse into our state-of-the-art facilities.</p>
+<section class="bg-primary text-white py-5 text-center position-relative overflow-hidden">
+    <div class="container position-relative z-1" data-aos="zoom-in">
+        <h1 class="fw-bold display-4">Photo Gallery</h1>
+        <p class="lead opacity-75">A glimpse into our state-of-the-art facilities.</p>
     </div>
 </section>
 
@@ -12,8 +12,8 @@
     <div class="container">
         <div class="row g-4">
             <!-- Image 1: Building -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card border-0 shadow-sm h-100">
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="0">
+                <div class="card border-0 shadow-sm h-100 overflow-hidden service-card">
                     <img src="{{ url_for('static', filename='images/gallery-building.png') }}" class="card-img-top"
                         alt="Manya Diagnostic Center Building" style="height: 250px; object-fit: cover;">
                     <div class="card-body text-center">
@@ -23,8 +23,8 @@
             </div>
 
             <!-- Image 2: Reception -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card border-0 shadow-sm h-100">
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="card border-0 shadow-sm h-100 overflow-hidden service-card">
                     <img src="{{ url_for('static', filename='images/gallery-reception.png') }}" class="card-img-top"
                         alt="Reception Area" style="height: 250px; object-fit: cover;">
                     <div class="card-body text-center">
@@ -34,8 +34,8 @@
             </div>
 
             <!-- Image 3: MRI Room -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card border-0 shadow-sm h-100">
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card border-0 shadow-sm h-100 overflow-hidden service-card">
                     <img src="{{ url_for('static', filename='images/gallery-mri.png') }}" class="card-img-top"
                         alt="MRI Room" style="height: 250px; object-fit: cover;">
                     <div class="card-body text-center">
@@ -45,8 +45,8 @@
             </div>
 
             <!-- Image 4: Laboratory -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card border-0 shadow-sm h-100">
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                <div class="card border-0 shadow-sm h-100 overflow-hidden service-card">
                     <img src="{{ url_for('static', filename='images/gallery-lab.png') }}" class="card-img-top"
                         alt="Laboratory" style="height: 250px; object-fit: cover;">
                     <div class="card-body text-center">
@@ -56,7 +56,7 @@
             </div>
 
             <!-- Placeholder for more -->
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
                 <div class="card border-0 shadow-sm h-100 bg-light d-flex justify-content-center align-items-center"
                     style="min-height: 250px;">
                     <div class="text-center text-muted">

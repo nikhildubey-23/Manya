@@ -1,20 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="bg-primary text-white py-5 text-center">
-    <div class="container">
-        <h1 class="fw-bold">My Reports</h1>
-        <p class="lead">Access your diagnostic reports online.</p>
+<section class="bg-primary text-white py-5 text-center position-relative overflow-hidden">
+    <div class="container position-relative z-1" data-aos="zoom-in">
+        <h1 class="fw-bold display-4">My Reports</h1>
+        <p class="lead opacity-75">Access your diagnostic reports online.</p>
     </div>
 </section>
 
 <section class="py-5">
     <div class="container text-center">
         <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="card border-0 shadow-sm p-5">
-                    <i class="bi bi-file-earmark-lock fs-1 text-primary mb-3"></i>
-                    <h2 class="fw-bold mb-3">Download Reports</h2>
+            <div class="col-lg-6" data-aos="fade-up">
+                <div class="card border-0 shadow-lg p-5 rounded-4">
+                    <div class="mb-3 text-primary bg-primary bg-opacity-10 d-inline-block p-4 rounded-circle">
+                        <i class="bi bi-file-earmark-lock fs-1"></i>
+                    </div>
+                    <h2 class="fw-bold mb-3 text-secondary">Download Reports</h2>
                     <p class="text-muted fs-5 mb-4">
                         To maintain patient privacy and data security, online report access is currently managed
                         directly by our reception team.

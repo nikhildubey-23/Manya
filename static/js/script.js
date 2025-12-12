@@ -1,4 +1,67 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+    });
+
+    // Sticky Navbar Logic
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Chatbot FAB Logic
+    const chatbotFab = document.getElementById('chatbot-fab');
+
+    // Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200; // The lower the slower
+
+    const animateCounters = () => {
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+
+                // Lower inc to slow and higher to slow
+                const inc = target / speed;
+
+                // Check if target is reached
+                if (count < target) {
+                    // Add inc to count and output in counter
+                    counter.innerText = Math.ceil(count + inc);
+                    // Call function every ms
+                    setTimeout(updateCount, 20);
+                } else {
+                    counter.innerText = target;
+                    // Append '+' if it's the 50000 one (hacky but works for demo)
+                    if (target === 50000) counter.innerText += '+';
+                }
+            };
+            updateCount();
+        });
+    };
+
+    // Trigger counter animation using Intersection Observer
+    let counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                observer.disconnect(); // Run once
+            }
+        });
+    }, { threshold: 0.5 });
+
+    if (document.querySelector('.counter')) {
+        counterObserver.observe(document.querySelector('.counter'));
+    }
 
     // Smooth scrolling for anchor links (if any internal links are added)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

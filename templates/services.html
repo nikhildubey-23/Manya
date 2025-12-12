@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="bg-primary text-white py-5 text-center">
-    <div class="container">
-        <h1 class="fw-bold">Our Services</h1>
-        <p class="lead">Comprehensive diagnostic solutions under one roof.</p>
+<section class="bg-primary text-white py-5 text-center position-relative overflow-hidden">
+    <div class="container position-relative z-1" data-aos="zoom-in">
+        <h1 class="fw-bold display-4">Our Services</h1>
+        <p class="lead opacity-75">Comprehensive diagnostic solutions under one roof.</p>
     </div>
 </section>
 
@@ -12,75 +12,93 @@
     <div class="container">
         <div class="row g-4">
             <!-- Service 1: MRI -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm service-card" data-bs-toggle="modal" data-bs-target="#modalMRI">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                <div class="card h-100 shadow-sm service-card border-0" data-bs-toggle="modal"
+                    data-bs-target="#modalMRI">
                     <div class="card-body text-center py-5">
-                        <i class="bi bi-magnet fs-1 text-primary mb-3"></i>
+                        <div class="mb-4 text-primary bg-primary bg-opacity-10 d-inline-block p-3 rounded-circle">
+                            <i class="bi bi-magnet fs-1"></i>
+                        </div>
                         <h4 class="card-title fw-bold">MRI Scan</h4>
                         <p class="card-text text-muted">High-resolution imaging including Neurological and Orthopedic
                             MRI.</p>
-                        <button class="btn btn-outline-primary btn-sm mt-3">View Details</button>
+                        <button class="btn btn-outline-primary btn-sm mt-3 rounded-pill px-4">View Details</button>
                     </div>
                 </div>
             </div>
 
             <!-- Service 2: CT Scan -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm service-card" data-bs-toggle="modal" data-bs-target="#modalCT">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 shadow-sm service-card border-0" data-bs-toggle="modal"
+                    data-bs-target="#modalCT">
                     <div class="card-body text-center py-5">
-                        <i class="bi bi-layers fs-1 text-primary mb-3"></i>
+                        <div class="mb-4 text-primary bg-primary bg-opacity-10 d-inline-block p-3 rounded-circle">
+                            <i class="bi bi-layers fs-1"></i>
+                        </div>
                         <h4 class="card-title fw-bold">CT Scan</h4>
                         <p class="card-text text-muted">Advanced Multi-slice CT for accurate body imaging.</p>
-                        <button class="btn btn-outline-primary btn-sm mt-3">View Details</button>
+                        <button class="btn btn-outline-primary btn-sm mt-3 rounded-pill px-4">View Details</button>
                     </div>
                 </div>
             </div>
 
             <!-- Service 3: Ultrasound -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm service-card" data-bs-toggle="modal" data-bs-target="#modalUSG">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 shadow-sm service-card border-0" data-bs-toggle="modal"
+                    data-bs-target="#modalUSG">
                     <div class="card-body text-center py-5">
-                        <i class="bi bi-soundwave fs-1 text-primary mb-3"></i>
+                        <div class="mb-4 text-primary bg-primary bg-opacity-10 d-inline-block p-3 rounded-circle">
+                            <i class="bi bi-soundwave fs-1"></i>
+                        </div>
                         <h4 class="card-title fw-bold">Ultrasound (USG)</h4>
                         <p class="card-text text-muted">3D/4D Ultrasound for pregnancy and abdominal scans.</p>
-                        <button class="btn btn-outline-primary btn-sm mt-3">View Details</button>
+                        <button class="btn btn-outline-primary btn-sm mt-3 rounded-pill px-4">View Details</button>
                     </div>
                 </div>
             </div>
 
             <!-- Service 4: X-Ray -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm service-card" data-bs-toggle="modal" data-bs-target="#modalXray">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 shadow-sm service-card border-0" data-bs-toggle="modal"
+                    data-bs-target="#modalXray">
                     <div class="card-body text-center py-5">
-                        <i class="bi bi-file-medical fs-1 text-primary mb-3"></i>
+                        <div class="mb-4 text-primary bg-primary bg-opacity-10 d-inline-block p-3 rounded-circle">
+                            <i class="bi bi-file-medical fs-1"></i>
+                        </div>
                         <h4 class="card-title fw-bold">Digital X-Ray</h4>
                         <p class="card-text text-muted">Low radiation digital X-rays with high clarity.</p>
-                        <button class="btn btn-outline-primary btn-sm mt-3">View Details</button>
+                        <button class="btn btn-outline-primary btn-sm mt-3 rounded-pill px-4">View Details</button>
                     </div>
                 </div>
             </div>
 
             <!-- Service 5: Pathology -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm service-card" data-bs-toggle="modal" data-bs-target="#modalPath">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="card h-100 shadow-sm service-card border-0" data-bs-toggle="modal"
+                    data-bs-target="#modalPath">
                     <div class="card-body text-center py-5">
-                        <i class="bi bi-droplet fs-1 text-primary mb-3"></i>
+                        <div class="mb-4 text-primary bg-primary bg-opacity-10 d-inline-block p-3 rounded-circle">
+                            <i class="bi bi-droplet fs-1"></i>
+                        </div>
                         <h4 class="card-title fw-bold">Pathology Lab</h4>
                         <p class="card-text text-muted">Complete range of blood tests, biochemistry, and hormone assays.
                         </p>
-                        <button class="btn btn-outline-primary btn-sm mt-3">View Details</button>
+                        <button class="btn btn-outline-primary btn-sm mt-3 rounded-pill px-4">View Details</button>
                     </div>
                 </div>
             </div>
 
             <!-- Service 6: ECG/Cardiology -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm service-card" data-bs-toggle="modal" data-bs-target="#modalECG">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                <div class="card h-100 shadow-sm service-card border-0" data-bs-toggle="modal"
+                    data-bs-target="#modalECG">
                     <div class="card-body text-center py-5">
-                        <i class="bi bi-activity fs-1 text-primary mb-3"></i>
+                        <div class="mb-4 text-primary bg-primary bg-opacity-10 d-inline-block p-3 rounded-circle">
+                            <i class="bi bi-activity fs-1"></i>
+                        </div>
                         <h4 class="card-title fw-bold">Cardiology</h4>
                         <p class="card-text text-muted">ECG, ECHO, and TMT services for heart health.</p>
-                        <button class="btn btn-outline-primary btn-sm mt-3">View Details</button>
+                        <button class="btn btn-outline-primary btn-sm mt-3 rounded-pill px-4">View Details</button>
                     </div>
                 </div>
             </div>

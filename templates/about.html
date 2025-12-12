@@ -1,69 +1,84 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="bg-primary text-white py-5 text-center">
-    <div class="container">
-        <h1 class="fw-bold">About Us</h1>
-        <p class="lead">Dedicated to excellence in diagnostics.</p>
+<section class="bg-primary text-white py-5 text-center position-relative overflow-hidden">
+    <div class="container position-relative z-1" data-aos="zoom-in">
+        <h1 class="fw-bold display-4">About Us</h1>
+        <p class="lead opacity-75">Dedicated to excellence in diagnostics.</p>
     </div>
 </section>
 
 <section class="py-5">
     <div class="container">
-        <div class="row mb-5">
-            <div class="col-lg-6">
-                <h2 class="text-primary fw-bold mb-3">Our Mission</h2>
+        <div class="row mb-5 align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+                <h2 class="text-secondary fw-bold mb-3">Our Mission</h2>
                 <p class="text-muted fs-5">
                     To provide accurate, reliable, and timely diagnostic services at affordable prices, ensuring that
                     every patient receives the best possible care for a healthier tomorrow.
                 </p>
             </div>
-            <div class="col-lg-6">
-                <h2 class="text-primary fw-bold mb-3">Our Vision</h2>
-                <p class="text-muted fs-5">
-                    To be the leading diagnostic center in Chhattisgarh, recognized for technological innovation,
-                    ethical practices, and patient-centric care.
-                </p>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="p-4 bg-light rounded-4 shadow-sm border border-light">
+                    <h2 class="text-secondary fw-bold mb-3">Our Vision</h2>
+                    <p class="text-muted fs-5 mb-0">
+                        To be the leading diagnostic center in Chhattisgarh, recognized for technological innovation,
+                        ethical practices, and patient-centric care.
+                    </p>
+                </div>
             </div>
         </div>
 
-        <hr class="my-5">
+        <hr class="my-5 opacity-10">
 
-        <h2 class="text-center fw-bold mb-5">Why We Are Different</h2>
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="text-primary fw-bold text-uppercase tracking-wider">Uniqueness</span>
+            <h2 class="fw-bold mt-2">Why We Are Different</h2>
+        </div>
+
         <div class="row g-4">
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <i class="bi bi-award fs-1 text-primary mb-3"></i>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 border-0 shadow-sm service-card text-center p-3">
+                    <div class="card-body">
+                        <div class="mb-4 text-primary bg-primary bg-opacity-10 d-inline-block p-3 rounded-circle">
+                            <i class="bi bi-award fs-2"></i>
+                        </div>
                         <h5 class="card-title fw-bold">Certified Quality</h5>
-                        <p class="card-text text-muted">NABL accredited labs ensuring highest standards of testing.</p>
+                        <p class="card-text text-muted small">NABL accredited labs ensuring highest standards of
+                            testing.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <i class="bi bi-wallet2 fs-1 text-primary mb-3"></i>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 border-0 shadow-sm service-card text-center p-3">
+                    <div class="card-body">
+                        <div class="mb-4 text-primary bg-primary bg-opacity-10 d-inline-block p-3 rounded-circle">
+                            <i class="bi bi-wallet2 fs-2"></i>
+                        </div>
                         <h5 class="card-title fw-bold">Affordable Pricing</h5>
-                        <p class="card-text text-muted">Quality diagnostics made accessible to everyone.</p>
+                        <p class="card-text text-muted small">Quality diagnostics made accessible to everyone.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <i class="bi bi-heart-pulse fs-1 text-primary mb-3"></i>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 border-0 shadow-sm service-card text-center p-3">
+                    <div class="card-body">
+                        <div class="mb-4 text-primary bg-primary bg-opacity-10 d-inline-block p-3 rounded-circle">
+                            <i class="bi bi-heart-pulse fs-2"></i>
+                        </div>
                         <h5 class="card-title fw-bold">Patient Care</h5>
-                        <p class="card-text text-muted">Comfortable environment with compassionate staff.</p>
+                        <p class="card-text text-muted small">Comfortable environment with compassionate staff.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <i class="bi bi-lightning fs-1 text-primary mb-3"></i>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                <div class="card h-100 border-0 shadow-sm service-card text-center p-3">
+                    <div class="card-body">
+                        <div class="mb-4 text-primary bg-primary bg-opacity-10 d-inline-block p-3 rounded-circle">
+                            <i class="bi bi-lightning fs-2"></i>
+                        </div>
                         <h5 class="card-title fw-bold">Quick Turnaround</h5>
-                        <p class="card-text text-muted">Most reports available within 24 hours.</p>
+                        <p class="card-text text-muted small">Most reports available within 24 hours.</p>
                     </div>
                 </div>
             </div>

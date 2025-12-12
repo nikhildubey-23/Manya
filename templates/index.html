@@ -3,14 +3,42 @@
 {% block content %}
 <!-- Hero Section -->
 <section class="hero-section text-center d-flex align-items-center">
-    <div class="container">
-        <h1 class="display-3 fw-bold mb-4">Manya Diagnostic Center</h1>
-        <p class="lead mb-4 fs-4">Advanced Technology. Accurate Results. Compassionate Care.</p>
-        <p class="mb-5">Your trusted partner for comprehensive diagnostic services in Bilaspur.</p>
-        <div class="d-flex justify-content-center gap-3">
+    <div class="container position-relative z-1">
+        <h1 class="display-3 fw-bold mb-4" data-aos="fade-down">Manya Diagnostic Center</h1>
+        <p class="lead mb-4 fs-4" data-aos="fade-up" data-aos-delay="200">Advanced Technology. Accurate Results.
+            Compassionate Care.</p>
+        <p class="mb-5" data-aos="fade-up" data-aos-delay="400">Your trusted partner for comprehensive diagnostic
+            services in Bilaspur.</p>
+        <div class="d-flex justify-content-center gap-3" data-aos="zoom-in" data-aos-delay="600">
             <a href="{{ url_for('book_test') }}"
-                class="btn btn-light btn-lg text-primary fw-bold px-4 rounded-pill">Book a Test</a>
+                class="btn btn-primary btn-lg fw-bold px-4 rounded-pill text-white shadow-lg">Book a Test</a>
             <a href="{{ url_for('services') }}" class="btn btn-outline-light btn-lg px-4 rounded-pill">Our Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="py-5 bg-white">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="p-4 rounded-4 shadow-sm bg-light">
+                    <h2 class="display-4 fw-bold text-primary counter" data-target="15">0</h2>
+                    <p class="text-muted fw-semibold">Years of Excellence</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="p-4 rounded-4 shadow-sm bg-light">
+                    <h2 class="display-4 fw-bold text-primary counter" data-target="50000">0</h2>
+                    <p class="text-muted fw-semibold">Happy Patients</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="p-4 rounded-4 shadow-sm bg-light">
+                    <h2 class="display-4 fw-bold text-primary counter" data-target="20">0</h2>
+                    <p class="text-muted fw-semibold">Expert Doctors</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -19,41 +47,49 @@
 <section class="py-5">
     <div class="container py-4">
         <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <h2 class="fw-bold text-primary mb-3">Welcome to Manya Diagnostic Center</h2>
+            <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                <h2 class="fw-bold text-secondary mb-3">Welcome to Manya Diagnostic Center</h2>
                 <p class="text-muted">
                     At Manya Diagnostic Center, we are committed to providing high-quality diagnostic services with
                     precision and care.
                     Equipped with state-of-the-art technology and a team of experienced professionals, we ensure
                     accurate and timely reports to aid your medical treatment.
                 </p>
-                <p class="text-muted">
-                    Whether it's routine lab tests or advanced imaging, our center in Bilaspur is designed to offer a
-                    comfortable and efficient experience for all patients.
-                </p>
-                <a href="{{ url_for('about') }}" class="btn btn-primary mt-3">Learn More About Us</a>
+                <div class="d-flex align-items-center mt-4">
+                    <div class="d-flex align-items-center me-4">
+                        <i class="bi bi-check-circle-fill text-primary fs-4 me-2"></i>
+                        <span class="fw-semibold">Accurate Reports</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-primary fs-4 me-2"></i>
+                        <span class="fw-semibold">Affordable Prices</span>
+                    </div>
+                </div>
+                <a href="{{ url_for('about') }}" class="btn btn-primary mt-4 rounded-pill px-4 text-white">Learn More
+                    About Us</a>
             </div>
-            <div class="col-lg-6 text-center">
+            <div class="col-lg-6 text-center" data-aos="fade-left">
                 <img src="{{ url_for('static', filename='images/hero-bg.png') }}" alt="Medical Facility"
-                    class="img-fluid rounded-3 shadow">
+                    class="img-fluid rounded-4 shadow-lg border border-3 border-light">
             </div>
         </div>
     </div>
 </section>
 
-<!-- Quick Links / Features Section -->
-<section class="py-5 bg-light">
+<!-- Features / Services Section -->
+<section class="py-5 bg-light position-relative">
     <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold">Why Choose Us?</h2>
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="text-primary fw-bold text-uppercase tracking-wider">Our Core Values</span>
+            <h2 class="fw-bold mt-2">Why Choose Us?</h2>
             <p class="text-muted">We prioritize your health with our core values</p>
         </div>
         <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm p-3 text-center service-card">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 p-4 text-center service-card">
                     <div class="card-body">
-                        <div class="mb-3 text-primary">
-                            <i class="bi bi-clock-history fs-1"></i>
+                        <div class="mb-4 text-primary bg-primary bg-opacity-10 d-inline-block p-3 rounded-circle">
+                            <i class="bi bi-clock-history fs-2"></i>
                         </div>
                         <h4 class="card-title fw-bold">Fast Reports</h4>
                         <p class="card-text text-muted">Get your reports quickly online or at our center without
@@ -61,11 +97,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm p-3 text-center service-card">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 p-4 text-center service-card">
                     <div class="card-body">
-                        <div class="mb-3 text-primary">
-                            <i class="bi bi-person-check fs-1"></i>
+                        <div class="mb-4 text-primary bg-primary bg-opacity-10 d-inline-block p-3 rounded-circle">
+                            <i class="bi bi-person-check fs-2"></i>
                         </div>
                         <h4 class="card-title fw-bold">Expert Staff</h4>
                         <p class="card-text text-muted">A team of qualified radiologists, pathologists, and technicians
@@ -73,11 +109,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm p-3 text-center service-card">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 p-4 text-center service-card">
                     <div class="card-body">
-                        <div class="mb-3 text-primary">
-                            <i class="bi bi-display fs-1"></i>
+                        <div class="mb-4 text-primary bg-primary bg-opacity-10 d-inline-block p-3 rounded-circle">
+                            <i class="bi bi-display fs-2"></i>
                         </div>
                         <h4 class="card-title fw-bold">Modern Tech</h4>
                         <p class="card-text text-muted">Using the latest diagnostic equipment for precise and reliable
@@ -85,6 +121,57 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="text-primary fw-bold text-uppercase tracking-wider">Testimonials</span>
+            <h2 class="fw-bold mt-2">What Our Patients Say</h2>
+        </div>
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="zoom-in">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="text-center bg-white p-5 rounded-4 shadow-sm border border-light">
+                                <i class="bi bi-quote fs-1 text-primary mb-3"></i>
+                                <p class="lead fst-italic text-muted">"Excellent service! The staff was very
+                                    professional and I got my reports on time. Highly recommended for anyone in
+                                    Bilaspur."</p>
+                                <h5 class="fw-bold mt-4">Rahul Sharma</h5>
+                                <span class="small text-secondary">Patient</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="text-center bg-white p-5 rounded-4 shadow-sm border border-light">
+                                <i class="bi bi-quote fs-1 text-primary mb-3"></i>
+                                <p class="lead fst-italic text-muted">"Very clean and hygienic environment. The online
+                                    report facility is a great time saver. Keep up the good work!"</p>
+                                <h5 class="fw-bold mt-4">Priya Verma</h5>
+                                <span class="small text-secondary">Patient</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-primary rounded-circle" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-primary rounded-circle" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
 </section>
