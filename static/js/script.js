@@ -7,6 +7,48 @@ document.addEventListener('DOMContentLoaded', function () {
         mirror: false
     });
 
+    // New Hero Section Animations
+    const heroSection = document.querySelector('.hero-section-new');
+    if (heroSection) {
+        // Parallax effect for floating shapes
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const shapes = document.querySelectorAll('.shape');
+            
+            shapes.forEach((shape, index) => {
+                const speed = 0.5 + (index * 0.1);
+                shape.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Dynamic feature item animation
+        const featureItems = document.querySelectorAll('.feature-item');
+        featureItems.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.2}s`;
+            item.classList.add('slideInLeft');
+            
+            // Add active class after slideIn animation completes to trigger border animation
+            setTimeout(() => {
+                item.classList.add('active');
+                
+                // Remove active class after 4 seconds to stop the border animation
+                setTimeout(() => {
+                    item.classList.remove('active');
+                }, 4000);
+            }, (index * 200) + 800);
+        });
+
+        // Scroll indicator behavior
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                scrollIndicator.classList.add('hidden');
+            } else {
+                scrollIndicator.classList.remove('hidden');
+            }
+        });
+    }
+
     // Testimonial Slider
     const testimonialTexts = document.querySelectorAll('.testimonial-text');
     let currentIndex = 0;
@@ -105,6 +147,72 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
+
+    // Achievement Animation Observer
+    const achievementItems = document.querySelectorAll('.achievement-item');
+    
+    if (achievementItems.length > 0) {
+        const achievementObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const item = entry.target;
+                    const achievementNum = item.getAttribute('data-achievement');
+                    
+                    setTimeout(() => {
+                        item.classList.add('active');
+                        
+                        // Add a special effect for the first achievement
+                        if (achievementNum === '1') {
+                            item.style.animation = 'pulse 1s ease-out';
+                            setTimeout(() => {
+                                item.style.animation = '';
+                            }, 1000);
+                        }
+                    }, (achievementNum - 1) * 200);
+                    
+                    observer.unobserve(item);
+                }
+            });
+        }, { 
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        achievementItems.forEach(item => {
+            achievementObserver.observe(item);
+        });
+
+        // Interactive hover effects
+        achievementItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) rotateX(5deg) scale(1.08)';
+                this.querySelector('.achievement-icon').style.animation = 'pulse 0.8s infinite';
+            });
+
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+                this.querySelector('.achievement-icon').style.animation = 'pulse 2s infinite';
+            });
+
+            // Add click interaction
+            item.addEventListener('click', function() {
+                const label = this.querySelector('.achievement-label');
+                const originalText = label.textContent;
+                
+                // Create a brief highlight effect
+                label.style.color = '#ffffff';
+                label.style.transform = 'scale(1.2)';
+                label.style.transition = 'all 0.3s ease';
+                
+                setTimeout(() => {
+                    label.style.color = '';
+                    label.style.transform = '';
+                }, 300);
+            });
+        });
+    }
+
+    
 
     // Form Submission Handling for Book Test
     const bookTestForm = document.querySelector('form[action="/book-test-submit"]'); // Placeholder selector

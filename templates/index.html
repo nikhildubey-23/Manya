@@ -1,26 +1,125 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!-- Hero Section -->
-<section class="hero-section text-center d-flex align-items-center">
-    <div class="container position-relative z-1">
-        <div class="text-center mb-3" data-aos="fade-down">
-            <img src="{{ url_for('static', filename='images/nabhlogo.JPG') }}" alt="NABH Accredited" class="img-fluid" style="max-height: 80px; border-radius: 1rem;">
+<!-- New Hero Section -->
+<section class="hero-section-new">
+    <!-- Animated Background -->
+    <div class="hero-background">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
         </div>
-        <h1 class="display-3 fw-bold mb-4" data-aos="fade-down">MANYA IMAGING & DIAGNOSTIC POINT</h1>
-        <div class="testimonial-slider mb-4" data-aos="fade-up" data-aos-delay="200">
-            <p class="lead fs-4 testimonial-text">First diagnostic in chhattisgarh to get NABH accridation</p>
-            <p class="lead fs-4 testimonial-text">First and only diagnostic to start non-invasive CT coronary angiography in Bilaspur and Sarguja district</p>
-            <p class="lead fs-4 testimonial-text">Expertise and focus on complex carcinoma cases</p>
-            <p class="lead fs-4 testimonial-text">Adult and paediatric cardiac imaging on CT/MRI</p>
+        <div class="gradient-overlay"></div>
+    </div>
+    
+    <!-- Hero Content -->
+    <div class="hero-content">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <!-- NABH Badge -->
+                    <div class="nabh-badge mb-4" data-aos="fade-down">
+                        <img src="{{ url_for('static', filename='images/nabhlogo.JPG') }}" alt="NABH Accredited" class="nabh-logo">
+                        <span class="badge-text">NABH Accredited</span>
+                    </div>
+                    
+                    <!-- Main Title -->
+                    <div class="hero-title" data-aos="fade-right" data-aos-delay="100">
+                        <h1 class="title-main">MANYA IMAGING</h1>
+                        <h2 class="title-sub">& DIAGNOSTIC POINT</h2>
+                        <div class="title-underline"></div>
+                    </div>
+                    
+                    <!-- Tagline -->
+                    <div class="hero-tagline" data-aos="fade-up" data-aos-delay="200">
+                        <p class="tagline-text">BETTER IMAGING • BETTER DIAGNOSIS</p>
+                        <p class="tagline-sub">WE CARE FROM INSIDE</p>
+                    </div>
+                    
+                    <!-- Key Features -->
+                    <div class="hero-features" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="bi bi-award-fill"></i>
+                            </div>
+                            <span>First diagnostic in Chhattisgarh to get NABH accreditation</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="bi bi-heart-pulse-fill"></i>
+                            </div>
+                            <span>First and only diagnostic to start non-invasive CT Coronary Angiography in Bilaspur and Sarguja District</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="bi bi-heart-pulse-fill"></i>
+                            </div>
+                            <span>Expertise and Focus on complex carcinoma cases</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="bi bi-shield-fill-check"></i>
+                            </div>
+                            <span>Adult and paediatric cardiac imaging on CT/MRI</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="bi bi-shield-fill-check"></i>
+                            </div>
+                            <span>20+ Years of Excellence</span>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="hero-buttons" data-aos="zoom-in" data-aos-delay="400">
+                        <a href="{{ url_for('book_test') }}" class="btn-hero btn-primary">
+                            <span>Book a Test</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                        <a href="{{ url_for('services') }}" class="btn-hero btn-secondary">
+                            <span>Our Services</span>
+                            <i class="bi bi-grid-3x3-gap"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <!-- Hero Visual -->
+                    <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
+                        <div class="visual-card">
+                            <div class="card-image">
+                                <img src="{{ url_for('static', filename='images/manya.jpg') }}" alt="Manya Diagnostic Center" class="main-image">
+                                <div class="image-overlay"></div>
+                            </div>
+                            <div class="floating-cards">
+                                <div class="float-card card-1">
+                                    <i class="bi bi-hospital"></i>
+                                    <span>Advanced Technology</span>
+                                </div>
+                                <div class="float-card card-2">
+                                    <i class="bi bi-people-fill"></i>
+                                    <span>Expert Doctors</span>
+                                </div>
+                                <div class="float-card card-3">
+                                    <i class="bi bi-clock-fill"></i>
+                                    <span>Quick Reports</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <p class="lead mb-4 fs-4" data-aos="fade-up" data-aos-delay="300">BETTER IMAGING BETTER DIAGNOSIS – WE CARE FROM INSIDE</p>
-        <p class="mb-5" data-aos="fade-up" data-aos-delay="400">Your trusted partner for comprehensive diagnostic
-            services in Bilaspur.</p>
-        <div class="d-flex justify-content-center gap-3" data-aos="zoom-in" data-aos-delay="600">
-            <a href="{{ url_for('book_test') }}"
-                class="btn btn-primary btn-lg fw-bold px-4 rounded-pill text-white shadow-lg">Book a Test</a>
-            <a href="{{ url_for('services') }}" class="btn btn-outline-light btn-lg px-4 rounded-pill">Our Services</a>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-text">Scroll Down</div>
+        <div class="scroll-arrow">
+            <i class="bi bi-chevron-down"></i>
         </div>
     </div>
 </section>
@@ -76,9 +175,9 @@
                 <a href="{{ url_for('about') }}" class="btn btn-primary mt-4 rounded-pill px-4 text-white">Learn More
                     About Us</a>
             </div>
-            <div class="col-lg-6 text-center" data-aos="fade-left">
-                <img src="{{ url_for('static', filename='images/manya.jpg') }}" alt="Medical Facility"
-                    class="img-fluid rounded-4 shadow-lg border border-3 border-light">
+            <div class="col-lg-6 text-center" data-aos="fade-left" >
+                <img src="{{ url_for('static', filename='images/cer.png') }}" alt="Medical Facility"
+                    class="img-fluid rounded-4 shadow-lg border border-3 border-dark" >
             </div>
         </div>
     </div>
