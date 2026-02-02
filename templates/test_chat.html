@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Debug</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        body { height: 100vh; overflow: hidden; background-color: #f0f2f5; }
+        .chat-container { height: 100vh; display: flex; flex-direction: column; }
+        .chat-header { background: #10b981; color: white; padding: 15px; }
+        .chat-messages { flex: 1; overflow-y: auto; padding: 20px; }
+        .chat-input { padding: 15px; border-top: 1px solid #dee2e6; }
+        .message { margin-bottom: 15px; }
+        .message-sent { text-align: right; }
+        .message-received { text-align: left; }
+        .message-bubble { 
+            display: inline-block; 
+            padding: 10px 15px; 
+            border-radius: 20px; 
+            max-width: 70%;
+            word-wrap: break-word;
+        }
+        .message-sent .message-bubble { 
+            background: #10b981; 
+            color: white; 
+        }
+        .message-received .message-bubble { 
+            background: white; 
+            border: 1px solid #dee2e6;
+        }
+        .typing-dots { display: flex; gap: 4px; }
+        .typing-dots span { 
+            width: 8px; 
+            height: 8px; 
+            border-radius: 50%; 
+            background: #6c757d; 
+            animation: typing 1.4s infinite; 
+        }
+        .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typing { 0%, 60%, 100% { transform: translateY(0); opacity: 0.5; } 30% { transform: translateY(-10px); opacity: 1; } }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header d-flex align-items-center">
+            <button onclick="goBack()" class="btn btn-link text-white me-3 p-0 text-decoration-none">
+                <i class="bi bi-arrow-left fs-4"></i>
+            </button>
+            <h5 class="mb-0"><i class="bi bi-robot me-2"></i>Manya AI Assistant</h5>
+        </div>
+        
+        <div class="chat-messages" id="chatBox">
+            <div class="message message-received">
+                <div class="message-bubble">Hello! I'm Manya AI Assistant. How can I help you today?</div>
+            </div>
+        </div>
+        
+        <div class="chat-input">
+            <div class="input-group">
+                <input type="text" id="chatInput" class="form-control" placeholder="Type your message...">
+                <button class="btn btn-success" type="button" onclick="sendMessage()">
+                    <i class="bi bi-send-fill"></i> Send
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const chatBox = document.getElementById('chatBox');
+        const chatInput = document.getElementById('chatInput');
+
+        function addMessage(text, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message message-${type}`;
+            
+            const bubbleDiv = document.createElement('div');
+            bubbleDiv.className = 'message-bubble';
+            bubbleDiv.textContent = text;
+            
+            messageDiv.appendChild(bubbleDiv);
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function showTyping() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message message-received';
+            typingDiv.id = 'typing-indicator';
+            
+            const bubbleDiv = document.createElement('div');
+            bubbleDiv.className = 'message-bubble';
+            bubbleDiv.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
+            
+            typingDiv.appendChild(bubbleDiv);
+            chatBox.appendChild(typingDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function removeTyping() {
+            const typing = document.getElementById('typing-indicator');
+            if (typing) typing.remove();
+        }
+
+        async function sendMessage() {
+            const message = chatInput.value.trim();
+            if (!message) return;
+            
+            addMessage(message, 'sent');
+            chatInput.value = '';
+            showTyping();
+            
+            try {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: message })
+                });
+                
+                const data = await response.json();
+                removeTyping();
+                
+                if (response.ok) {
+                    addMessage(data.response, 'received');
+                } else {
+                    addMessage('Error: ' + (data.error || 'Something went wrong'), 'received');
+                }
+            } catch (error) {
+                removeTyping();
+                addMessage('Connection error. Please try again.', 'received');
+                console.error('Error:', error);
+            }
+        }
+
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        // Back button functionality
+        function goBack() {
+            // Check if there's a referrer and it's from the same domain
+            if (document.referrer && document.referrer.includes(window.location.hostname)) {
+                window.history.back();
+            } else {
+                // If no referrer or external referrer, go to home page
+                window.location.href = '/';
+            }
+        }
+
+        // Store the referring page when the chat loads
+        window.addEventListener('load', function() {
+            // Store the current referrer for later use
+            sessionStorage.setItem('chatReferrer', document.referrer);
+        });
+    </script>
+</body>
+</html>
