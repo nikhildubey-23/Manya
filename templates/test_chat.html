@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Chatbot Debug</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
@@ -19,6 +19,7 @@
             display: flex; 
             flex-direction: column; 
             max-width: 100%;
+            position: relative;
         }
         .chat-header { 
             background: #10b981; 
@@ -37,6 +38,9 @@
             border-top: 1px solid #dee2e6; 
             flex-shrink: 0;
             background-color: white;
+            position: sticky;
+            bottom: 0;
+            z-index: 10;
         }
         .message { margin-bottom: 15px; }
         .message-sent { text-align: right; }
@@ -70,6 +74,14 @@
         
         /* Mobile responsive styles */
         @media (max-width: 768px) {
+            body {
+                height: 100vh;
+                height: -webkit-fill-available;
+            }
+            .chat-container {
+                height: 100vh;
+                height: -webkit-fill-available;
+            }
             .chat-header {
                 padding: 10px;
             }
@@ -79,6 +91,7 @@
             }
             .chat-input {
                 padding: 10px;
+                min-height: 60px;
             }
             .message-bubble {
                 max-width: 85%;
@@ -92,10 +105,12 @@
             }
             #chatInput {
                 font-size: 16px; /* Prevents zoom on iOS */
+                min-height: 44px; /* iOS touch target minimum */
             }
             .btn {
                 font-size: 14px;
                 padding: 8px 12px;
+                min-height: 44px; /* iOS touch target minimum */
             }
         }
         
@@ -108,6 +123,7 @@
             }
             .chat-input {
                 padding: 8px;
+                min-height: 50px;
             }
             .message-bubble {
                 max-width: 90%;
@@ -120,6 +136,22 @@
             .btn {
                 font-size: 12px;
                 padding: 6px 10px;
+                min-height: 40px;
+            }
+            #chatInput {
+                min-height: 40px;
+            }
+        }
+        
+        /* Additional mobile fixes */
+        .input-group {
+            width: 100%;
+        }
+        
+        /* Ensure input is visible on all mobile devices */
+        @supports (-webkit-touch-callout: none) {
+            .chat-container {
+                min-height: 100vh;
             }
         }
     </style>
