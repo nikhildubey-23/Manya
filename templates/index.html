@@ -270,63 +270,73 @@
 </section>
 
 <!-- Mangala Center Section -->
-<section class="py-5 bg-white">
+<section class="py-5" style="background: linear-gradient(135deg, #f8fafc 0%, #d1fae5 100%);">
     <div class="container">
         <div class="text-center mb-5" data-aos="fade-up">
             <span class="text-primary fw-bold text-uppercase tracking-wider">New Center</span>
             <h2 class="fw-bold mt-2">Mangala Center</h2>
             <p class="text-muted">Expanding our services to Mangala, Bilaspur</p>
         </div>
-        <div class="row g-4 align-items-center">
-            <div class="col-lg-7" data-aos="fade-right">
-                <div id="mangalaCarouselIndex" class="carousel slide rounded-4 overflow-hidden shadow mx-auto" style="max-width: 500px;" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#mangalaCarouselIndex" data-bs-slide-to="0" class="active"></button>
-                        <button type="button" data-bs-target="#mangalaCarouselIndex" data-bs-slide-to="1"></button>
-                        <button type="button" data-bs-target="#mangalaCarouselIndex" data-bs-slide-to="2"></button>
-                        <button type="button" data-bs-target="#mangalaCarouselIndex" data-bs-slide-to="3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="{{ url_for('static', filename='images/maingate_managala.jpeg') }}" class="w-100" alt="Mangala Center Main Gate">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{ url_for('static', filename='images/ct_scan_mangala.jpeg') }}" class="w-100" alt="CT Scan Mangala">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{ url_for('static', filename='images/xray_managala.jpeg') }}" class="w-100" alt="X-Ray Mangala">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{ url_for('static', filename='images/manya_ambulance_mangala.jpeg') }}" class="w-100" alt="Ambulance Mangala">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#mangalaCarouselIndex" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon bg-dark bg-opacity-25 rounded-circle p-3" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#mangalaCarouselIndex" data-bs-slide="next">
-                        <span class="carousel-control-next-icon bg-dark bg-opacity-25 rounded-circle p-3" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+        <div class="text-center mb-4" data-aos="fade-up">
+            <p class="text-muted lead">Our new center at Mangala, Bilaspur is equipped with advanced CT Scan, Digital X-Ray, ambulance services, and a comfortable patient environment.</p>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-center gap-3 mb-4" data-aos="fade-up">
+            <span class="badge bg-white text-dark border rounded-pill px-3 py-2 shadow-sm">
+                <i class="bi bi-geo-alt-fill text-primary me-1"></i> Real Heaven Apartment, Mangla Chowk, Bilaspur
+            </span>
+            <span class="badge bg-white text-dark border rounded-pill px-3 py-2 shadow-sm">
+                <i class="bi bi-telephone-fill text-primary me-1"></i> 9131053337
+            </span>
+            <span class="badge bg-white text-dark border rounded-pill px-3 py-2 shadow-sm">
+                <i class="bi bi-telephone-fill text-primary me-1"></i> 07752-297977
+            </span>
+        </div>
+
+        <div class="row g-3" data-aos="fade-up">
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="rounded-4 overflow-hidden shadow-sm bg-white">
+                    <img src="{{ url_for('static', filename='images/main_gate_mangala.jpeg') }}" class="w-100" alt="Main Gate">
+                    <p class="text-center small fw-semibold text-secondary py-2 mb-0">Main Gate</p>
                 </div>
             </div>
-            <div class="col-lg-5" data-aos="fade-left">
-                <div class="ps-lg-4 mt-4 mt-lg-0">
-                    <h3 class="fw-bold text-secondary mb-3">Quality Diagnostics at Mangala</h3>
-                    <p class="text-muted">Our new center brings the same advanced diagnostic technology and expert care closer to the Mangala community. Equipped with modern CT, X-Ray, and ambulance services.</p>
-                    <div class="d-flex align-items-start mb-2">
-                        <i class="bi bi-geo-alt-fill text-primary fs-4 me-3 mt-1"></i>
-                        <span class="text-muted">Real Heaven Apartment, Mangla Chowk, Bilaspur</span>
-                    </div>
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="bi bi-telephone-fill text-primary fs-4 me-3"></i>
-                        <div>
-                            <p class="text-muted mb-0">9131053337 | 07752-297977</p>
-                        </div>
-                    </div>
-                    <a href="{{ url_for('contact') }}" class="btn btn-primary rounded-pill px-4">View Location</a>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="rounded-4 overflow-hidden shadow-sm bg-white">
+                    <img src="{{ url_for('static', filename='images/reception_mangala.jpeg') }}" class="w-100" alt="Reception">
+                    <p class="text-center small fw-semibold text-secondary py-2 mb-0">Reception</p>
                 </div>
             </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="rounded-4 overflow-hidden shadow-sm bg-white">
+                    <img src="{{ url_for('static', filename='images/sitting_area.jpeg') }}" class="w-100" alt="Sitting Area">
+                    <p class="text-center small fw-semibold text-secondary py-2 mb-0">Sitting Area</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="rounded-4 overflow-hidden shadow-sm bg-white">
+                    <img src="{{ url_for('static', filename='images/ct_scan_mangala.jpeg') }}" class="w-100" alt="CT Scan">
+                    <p class="text-center small fw-semibold text-secondary py-2 mb-0">CT Scan Machine</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="rounded-4 overflow-hidden shadow-sm bg-white">
+                    <img src="{{ url_for('static', filename='images/x_ray_bed_mangala.jpeg') }}" class="w-100" alt="X-Ray Bed">
+                    <p class="text-center small fw-semibold text-secondary py-2 mb-0">X-Ray Room</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="rounded-4 overflow-hidden shadow-sm bg-white">
+                    <img src="{{ url_for('static', filename='images/ambulance.jpeg') }}" class="w-100" alt="Ambulance">
+                    <p class="text-center small fw-semibold text-secondary py-2 mb-0">Ambulance Service</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="rounded-4 overflow-hidden shadow-sm bg-white">
+                    <img src="{{ url_for('static', filename='images/ct_meachine_console.png') }}" class="w-100" alt="CT Scan Console">
+                    <p class="text-center small fw-semibold text-secondary py-2 mb-0">CT Scan Console</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
