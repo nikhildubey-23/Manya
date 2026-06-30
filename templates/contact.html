@@ -98,73 +98,69 @@
 
         <!-- Mangala Center -->
         <div class="row mt-5">
-            <div class="col-12">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <div class="text-center mb-4">
-                            <h4 class="fw-bold text-primary mb-3"><i class="bi bi-building me-2"></i>Our New Center - Mangala</h4>
-                            <p class="text-muted">Visit our new center at Mangala, Bilaspur equipped with advanced diagnostic facilities.</p>
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4 d-flex flex-column justify-content-center h-100">
+                        <div class="text-center text-lg-start mb-3">
+                            <span class="badge bg-primary rounded-pill px-3 py-1 mb-2">
+                                <i class="bi bi-geo-alt-fill me-1"></i> Visit Us
+                            </span>
+                            <h4 class="fw-bold mt-2">Mangala Center</h4>
+                            <p class="text-muted mb-0">Real Heaven Apartment, beside Achievers Public School, Usal Bypass Road, Mangla Chowk, Bilaspur</p>
                         </div>
-
-                        <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
-                            <span class="badge bg-white text-dark border rounded-pill px-3 py-2 shadow-sm">
-                                <i class="bi bi-geo-alt-fill text-primary me-1"></i> Real Heaven Apartment, Mangla Chowk, Bilaspur
-                            </span>
-                            <span class="badge bg-white text-dark border rounded-pill px-3 py-2 shadow-sm">
-                                <i class="bi bi-telephone-fill text-primary me-1"></i> 9131053337
-                            </span>
-                            <span class="badge bg-white text-dark border rounded-pill px-3 py-2 shadow-sm">
-                                <i class="bi bi-telephone-fill text-primary me-1"></i> 07752-297977
-                            </span>
-                        </div>
-
-                        <div class="row g-3">
-                            <div class="col-6 col-md-4 col-lg-3">
-                                <div class="rounded-3 overflow-hidden shadow-sm bg-white">
-                                    <img src="{{ url_for('static', filename='images/main_gate_mangala.jpeg') }}" class="w-100" alt="Main Gate">
-                                    <p class="text-center small fw-semibold text-secondary py-2 mb-0">Main Gate</p>
-                                </div>
+                        <hr>
+                        <div class="d-flex flex-wrap gap-4 justify-content-center justify-content-lg-start">
+                            <div>
+                                <p class="small text-muted mb-1"><i class="bi bi-telephone-fill text-primary me-1"></i> Phone</p>
+                                <p class="fw-bold mb-0">9131053337</p>
                             </div>
-                            <div class="col-6 col-md-4 col-lg-3">
-                                <div class="rounded-3 overflow-hidden shadow-sm bg-white">
-                                    <img src="{{ url_for('static', filename='images/reception_mangala.jpeg') }}" class="w-100" alt="Reception">
-                                    <p class="text-center small fw-semibold text-secondary py-2 mb-0">Reception</p>
-                                </div>
+                            <div>
+                                <p class="small text-muted mb-1"><i class="bi bi-telephone-fill text-primary me-1"></i> Landline</p>
+                                <p class="fw-bold mb-0">07752-297977</p>
                             </div>
-                            <div class="col-6 col-md-4 col-lg-3">
-                                <div class="rounded-3 overflow-hidden shadow-sm bg-white">
-                                    <img src="{{ url_for('static', filename='images/sitting_area.jpeg') }}" class="w-100" alt="Sitting Area">
-                                    <p class="text-center small fw-semibold text-secondary py-2 mb-0">Sitting Area</p>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg-3">
-                                <div class="rounded-3 overflow-hidden shadow-sm bg-white">
-                                    <img src="{{ url_for('static', filename='images/ct_scan_mangala.jpeg') }}" class="w-100" alt="CT Scan">
-                                    <p class="text-center small fw-semibold text-secondary py-2 mb-0">CT Scan Machine</p>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg-3">
-                                <div class="rounded-3 overflow-hidden shadow-sm bg-white">
-                                    <img src="{{ url_for('static', filename='images/x_ray_bed_mangala.jpeg') }}" class="w-100" alt="X-Ray Bed">
-                                    <p class="text-center small fw-semibold text-secondary py-2 mb-0">X-Ray Room</p>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg-3">
-                                <div class="rounded-3 overflow-hidden shadow-sm bg-white">
-                                    <img src="{{ url_for('static', filename='images/ambulance.jpeg') }}" class="w-100" alt="Ambulance">
-                                    <p class="text-center small fw-semibold text-secondary py-2 mb-0">Ambulance Service</p>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg-3">
-                                <div class="rounded-3 overflow-hidden shadow-sm bg-white">
-                                    <img src="{{ url_for('static', filename='images/ct_meachine_console.png') }}" class="w-100" alt="CT Scan Console">
-                                    <p class="text-center small fw-semibold text-secondary py-2 mb-0">CT Scan Console</p>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row g-2">
+                    <div class="col-4">
+                        <div class="rounded-3 overflow-hidden shadow-sm">
+                            <img src="{{ url_for('static', filename='images/main_gate_mangala.jpeg') }}" class="w-100" alt="Main Gate">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="rounded-3 overflow-hidden shadow-sm">
+                            <img src="{{ url_for('static', filename='images/reception_mangala.jpeg') }}" class="w-100" alt="Reception">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="rounded-3 overflow-hidden shadow-sm">
+                            <img src="{{ url_for('static', filename='images/sitting_area.jpeg') }}" class="w-100" alt="Sitting Area">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="rounded-3 overflow-hidden shadow-sm">
+                            <img src="{{ url_for('static', filename='images/ct_scan_mangala.jpeg') }}" class="w-100" alt="CT Scan">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="rounded-3 overflow-hidden shadow-sm">
+                            <img src="{{ url_for('static', filename='images/x_ray_bed_mangala.jpeg') }}" class="w-100" alt="X-Ray">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="rounded-3 overflow-hidden shadow-sm">
+                            <img src="{{ url_for('static', filename='images/ambulance.jpeg') }}" class="w-100" alt="Ambulance">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="rounded-3 overflow-hidden shadow-sm">
+                            <img src="{{ url_for('static', filename='images/ct_meachine_console.png') }}" class="w-100" alt="CT Console">
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center text-muted small mt-2 mb-0"><i class="bi bi-camera me-1"></i> Mangala Center Facility Tour</p>
             </div>
         </div>
     </div>
